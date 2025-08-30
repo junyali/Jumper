@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://c2uf0c2lcoiqw"]
+[gd_scene load_steps=4 format=4 uid="uid://c2uf0c2lcoiqw"]
 
 [ext_resource type="PackedScene" uid="uid://l3ym52jok1mu" path="res://scenes/player.tscn" id="1_2q6dc"]
 [ext_resource type="TileSet" uid="uid://dm5xh78jba7cs" path="res://assets/level/tileset.tres" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://bco0mpxv1wv8c" path="res://scenes/platforms/full.tscn" id="3_w8frs"]
 
 [node name="Level" type="Node2D"]
 
@@ -15,3 +16,7 @@ tile_set = ExtResource("1_w7c3h")
 
 [node name="Player" parent="." instance=ExtResource("1_2q6dc")]
 collision_mask = 2
+platform_floor_layers = 3
+
+[node name="Full" parent="." instance=ExtResource("3_w8frs")]
+position = Vector2(0, 8)
