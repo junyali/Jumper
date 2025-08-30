@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://l3ym52jok1mu"]
+
+[ext_resource type="SpriteFrames" uid="uid://bakrvpphegyai" path="res://assets/player/player_sprite_frames.tres" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://djppux81a1n2b" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
+radius = 11.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_3vyb7")
+animation = &"jump"
+frame_progress = 0.750345
+offset = Vector2(0, -16)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_3vyb7")
+
+[node name="Camera" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
