@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bumnc6urjpp18"]
+
+[ext_resource type="Script" uid="uid://dsxumo6f3etir" path="res://scripts/platform.gd" id="1_k52rl"]
+[ext_resource type="Texture2D" uid="uid://yhxrcsx3f40n" path="res://assets/level/platform.png" id="2_ew2u1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k52rl"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew2u1"]
+size = Vector2(144, 16)
+
+[node name="SmallMiddleGap" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_k52rl")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("2_ew2u1")
+offset = Vector2(-88, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 144, 16)
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("2_ew2u1")
+offset = Vector2(88, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 144, 16)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-88, 0)
+shape = SubResource("RectangleShape2D_k52rl")
+
+[node name="Collision2" type="CollisionShape2D" parent="."]
+position = Vector2(88, 0)
+shape = SubResource("RectangleShape2D_ew2u1")

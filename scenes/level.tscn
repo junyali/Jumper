@@ -18,5 +18,7 @@ tile_set = ExtResource("1_w7c3h")
 collision_mask = 2
 platform_floor_layers = 3
 
-[node name="Full" parent="." instance=ExtResource("3_w8frs")]
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Full" parent="Platforms" instance=ExtResource("3_w8frs")]
 position = Vector2(0, 8)
