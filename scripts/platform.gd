@@ -1,10 +1,10 @@
-extends StaticBody2D
+extends CharacterBody2D
 class_name Platform
 
 @export var fall_speed: float = 100.0
 
 func _ready() -> void:
-	fall_speed += randf_range(-10, 20)
+	pass
 
 func _process(delta: float) -> void:
 	position.y += fall_speed * delta

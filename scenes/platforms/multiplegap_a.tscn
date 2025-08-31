@@ -12,7 +12,7 @@ size = Vector2(64, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_regig"]
 size = Vector2(64, 16)
 
-[node name="MultipleGapA" type="StaticBody2D"]
+[node name="MultipleGapA" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_regig")

@@ -9,7 +9,7 @@ size = Vector2(112, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6daht"]
 size = Vector2(112, 16)
 
-[node name="BigMiddleGap" type="StaticBody2D"]
+[node name="BigMiddleGap" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_1satk")
