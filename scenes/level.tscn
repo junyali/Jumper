@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://c2uf0c2lcoiqw"]
+[gd_scene load_steps=5 format=4 uid="uid://c2uf0c2lcoiqw"]
 
 [ext_resource type="PackedScene" uid="uid://l3ym52jok1mu" path="res://scenes/player.tscn" id="1_2q6dc"]
 [ext_resource type="TileSet" uid="uid://dm5xh78jba7cs" path="res://assets/level/tileset.tres" id="1_w7c3h"]
+[ext_resource type="Script" uid="uid://c4hg2cg4c14bq" path="res://scripts/platforms.gd" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://bco0mpxv1wv8c" path="res://scenes/platforms/full.tscn" id="3_w8frs"]
 
 [node name="Level" type="Node2D"]
@@ -15,10 +16,17 @@ tile_map_data = PackedByteArray("AAD1////AAADAAAAAAD1//7/AAADAAAAAAD1//3/AAADAAA
 tile_set = ExtResource("1_w7c3h")
 
 [node name="Player" parent="." instance=ExtResource("1_2q6dc")]
+position = Vector2(1, -530)
 collision_mask = 2
 platform_floor_layers = 3
 
 [node name="Platforms" type="Node2D" parent="."]
+script = ExtResource("3_mx8sn")
+
+[node name="Spawner" type="Timer" parent="Platforms"]
+autostart = true
 
 [node name="Full" parent="Platforms" instance=ExtResource("3_w8frs")]
-position = Vector2(0, 8)
+position = Vector2(1, -520)
+
+[connection signal="timeout" from="Platforms/Spawner" to="Platforms" method="_on_spawner_timeout"]
