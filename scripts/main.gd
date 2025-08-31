@@ -10,6 +10,7 @@ func _ready() -> void:
 	spikes.player_died.connect(_on_player_died)
 
 func _on_player_died() -> void:
+	player.get_node("DeathSound").play()
 	game_paused = true
 	show_death_scene()
 	player.set_physics_process(false)

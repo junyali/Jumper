@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var COYOTE_TIME: float = 0.2
 
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound
 
 var coyote_timer: float = 0.0
 var was_on_floor_last_frame: bool = false
@@ -39,6 +41,7 @@ func handle_input() -> void:
 		if is_on_floor() or coyote_timer > 0:
 			velocity.y = JUMP_VELOCITY
 			coyote_timer = 0
+			jump_sound.play()
 
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:

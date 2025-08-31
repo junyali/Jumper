@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://l3ym52jok1mu"]
+[gd_scene load_steps=6 format=3 uid="uid://l3ym52jok1mu"]
 
 [ext_resource type="SpriteFrames" uid="uid://bakrvpphegyai" path="res://assets/player/player_sprite_frames.tres" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://djppux81a1n2b" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://e1hn0pnjlnq3" path="res://sfx/jump.wav" id="3_dqkch"]
+[ext_resource type="AudioStream" uid="uid://bg80va3uyf8nk" path="res://sfx/death.wav" id="4_qlg0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
 radius = 11.0
@@ -26,3 +28,9 @@ shape = SubResource("CircleShape2D_3vyb7")
 process_callback = 0
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dqkch")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qlg0r")
